@@ -49,9 +49,9 @@ public class ConsolaConversor implements InterfazVista{
 		solicitaOperacion();
 		operacion = leeOpcion();
 		
-		if ( operacion == 1 ) control.actionPerformed( new ActionEvent(this, operacion, ADOLARES) );
+		if ( operacion == 1 ) control.actionPerformed( new ActionEvent(this, operacion, PESOSADOLARES) );
 		
-		if ( operacion == 2 ) control.actionPerformed( new ActionEvent(this, operacion, APESOS) );
+		if ( operacion == 2 ) control.actionPerformed( new ActionEvent(this, operacion, DOLARESAPESOS) );
 		
 		if ( operacion == 3 ) {
 			System.out.println("Hasta luego!");

@@ -12,8 +12,10 @@ import Controller.ControlConversor;
  */
 public interface InterfazVista {
     
-    static final String ADOLARES = "Pesos a dolares";
-    static final String APESOS = "Dolares a pesos";
+    static final String PESOSADOLARES = "Pesos a dolares";
+    static final String DOLARESAPESOS = "Dolares a pesos";
+    static final String PESOSAEUROS = "Pesos a euros";
+    static final String EUROSAPESOS = "Euros a pesos";
     
     void setControl(ControlConversor c);
     

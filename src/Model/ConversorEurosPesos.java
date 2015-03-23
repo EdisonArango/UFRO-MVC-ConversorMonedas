@@ -9,17 +9,17 @@ package Model;
  *
  * @author edisonarango
  */
-public class ConversorDolaresPesos extends ConversorMonedas{
+public class ConversorEurosPesos extends ConversorMonedas{
 
-    public ConversorDolaresPesos() {
-        super(651.45D);
+    public ConversorEurosPesos() {
+        super(700);
     }
     
-    public double dolaresAPesos(double cantidad){
+    public double eurosAPesos(double cantidad){
         return monedaAPesos(cantidad);
     }
     
-    public double pesosADolares (double cantidad){
+    public double pesosAEuros (double cantidad){
         return pesosAMoneda(cantidad);
     }
     

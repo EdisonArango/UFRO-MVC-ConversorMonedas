@@ -17,11 +17,11 @@ public class ConversorMonedas {
         this.cambio = cambio;
     }
     
-    public double dolaresAMonedas(double cantidad){
+    public double monedaAPesos(double cantidad){ 
         return cantidad*cambio;
     }
     
-    public double monedaADolares(double cantidad){
+    public double pesosAMoneda(double cantidad){
         return cantidad/cambio;
     }
 }

@@ -18,8 +18,8 @@ public class VentanaConversor extends javax.swing.JFrame implements InterfazVist
      */
     public VentanaConversor() {
         initComponents();
-        convertirAPesos.setActionCommand(APESOS);
-        convertirADolares.setActionCommand(ADOLARES);
+        convertirAPesos.setActionCommand(DOLARESAPESOS);
+        convertirADolares.setActionCommand(PESOSADOLARES);
     }
 
     /**
