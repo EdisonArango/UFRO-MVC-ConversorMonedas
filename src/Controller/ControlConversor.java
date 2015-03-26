@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package Controller;
-import Model.ConversorDolaresPesos;
+import Model.*;
 import View.InterfazVista;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -16,11 +16,13 @@ import java.awt.event.ActionListener;
 public class ControlConversor implements ActionListener{
     
     private InterfazVista vista;
-    private ConversorDolaresPesos modelo;
+    private ConversorDolaresPesos conversorDolaresPesos;
+    private ConversorEurosPesos conversorEurosPesos;
 
-    public ControlConversor(InterfazVista vista, ConversorDolaresPesos modelo) {
+    public ControlConversor(InterfazVista vista, ConversorDolaresPesos conversorDolaresPesos, ConversorEurosPesos conversorEurosPesos) {
         this.vista = vista;
-        this.modelo = modelo;
+        this.conversorDolaresPesos = conversorDolaresPesos;
+        this.conversorEurosPesos = conversorEurosPesos;
     }
 
     @Override
@@ -29,16 +31,16 @@ public class ControlConversor implements ActionListener{
         
         switch (e.getActionCommand()) {
             case InterfazVista.PESOSADOLARES:
-                vista.escribeCambio(cantidad + " pesos son: "+modelo.pesosADolares(cantidad)+" dólares");
+                vista.escribeCambio(cantidad + " pesos son: "+conversorDolaresPesos.pesosADolares(cantidad)+" dólares");
                 break;
             case InterfazVista.DOLARESAPESOS:
-                vista.escribeCambio(cantidad + " dólares son: "+modelo.dolaresAPesos(cantidad)+" pesos");
+                vista.escribeCambio(cantidad + " dólares son: "+conversorDolaresPesos.dolaresAPesos(cantidad)+" pesos");
                 break;
             case InterfazVista.PESOSAEUROS:
-                vista.escribeCambio(cantidad + " pesos son: "+modelo.pesosADolares(cantidad)+" euros");
+                vista.escribeCambio(cantidad + " pesos son: "+conversorEurosPesos.pesosAEuros(cantidad)+" euros");
                 break;
             case InterfazVista.EUROSAPESOS:
-                vista.escribeCambio(cantidad + " euros son: "+modelo.dolaresAPesos(cantidad)+" pesos");
+                vista.escribeCambio(cantidad + " euros son: "+conversorEurosPesos.eurosAPesos(cantidad)+" pesos");
                 break;
             default:
                 vista.escribeCambio("ERROR!");

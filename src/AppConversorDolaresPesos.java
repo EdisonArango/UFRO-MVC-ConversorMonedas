@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-import Model.ConversorDolaresPesos;
+import Model.*;
 import View.*;
-import Controller.ControlConversor;
+import Controller.*;
 /**
  *
  * @author edisonarango
@@ -14,12 +14,13 @@ public class AppConversorDolaresPesos {
     
     
     public static void main(String[] args) {
-        ConversorDolaresPesos modelo =  new ConversorDolaresPesos();
+        ConversorDolaresPesos conversorDolaresPesos =  new ConversorDolaresPesos();
+        ConversorEurosPesos conversorEurosPesos =  new ConversorEurosPesos();
         
         InterfazVista vista = new VentanaConversor();
 //        InterfazVista vista = new ConsolaConversor();
         
-        ControlConversor control = new ControlConversor(vista,modelo);
+        ControlConversor control = new ControlConversor(vista,conversorDolaresPesos,conversorEurosPesos);
         
         vista.setControl(control);
         vista.arrancar();
