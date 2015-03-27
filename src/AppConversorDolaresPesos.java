@@ -19,6 +19,7 @@ public class AppConversorDolaresPesos {
         ConversorMonedas conversor = new ConversorMonedas();
         
         InterfazVista vista = new VentanaConversor();
+        
 //        InterfazVista vista = new ConsolaConversor();
         
         ControlConversor control = new ControlConversor(vista,conversor);
