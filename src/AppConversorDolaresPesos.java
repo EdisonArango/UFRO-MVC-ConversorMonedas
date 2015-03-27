@@ -14,13 +14,14 @@ public class AppConversorDolaresPesos {
     
     
     public static void main(String[] args) {
-        ConversorDolaresPesos conversorDolaresPesos =  new ConversorDolaresPesos();
-        ConversorEurosPesos conversorEurosPesos =  new ConversorEurosPesos();
+//        ConversorDolaresPesos conversorDolaresPesos =  new ConversorDolaresPesos();
+//        ConversorEurosPesos conversorEurosPesos =  new ConversorEurosPesos();
+        ConversorMonedas conversor = new ConversorMonedas();
         
         InterfazVista vista = new VentanaConversor();
 //        InterfazVista vista = new ConsolaConversor();
         
-        ControlConversor control = new ControlConversor(vista,conversorDolaresPesos,conversorEurosPesos);
+        ControlConversor control = new ControlConversor(vista,conversor);
         
         vista.setControl(control);
         vista.arrancar();

@@ -91,5 +91,13 @@ public class ConsolaConversor implements InterfazVista{
 		System.out.println(s);
 		procesaNuevaOperacion();
 	}
+        
+        @Override
+    public void escribirValorDolar (double valor){
+    }
+    
+    @Override
+    public void escribirValorEuro (double valor){
+    }
 
 }

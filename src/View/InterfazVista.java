@@ -25,4 +25,9 @@ public interface InterfazVista {
     
     void escribeCambio(String s);
     
+    void escribirValorDolar(double valor);
+    
+    void escribirValorEuro(double valor);
+    
+    
 }

@@ -18,8 +18,7 @@ public class VentanaConversor extends javax.swing.JFrame implements InterfazVist
      */
     public VentanaConversor() {
         initComponents();
-        convertirAPesos.setActionCommand(DOLARESAPESOS);
-        convertirADolares.setActionCommand(PESOSADOLARES);
+        botonConvertir.setActionCommand(DOLARESAPESOS);
     }
 
     /**
@@ -33,93 +32,177 @@ public class VentanaConversor extends javax.swing.JFrame implements InterfazVist
 
         buttonGroup1 = new javax.swing.ButtonGroup();
         buttonGroup2 = new javax.swing.ButtonGroup();
+        buttonGroup3 = new javax.swing.ButtonGroup();
+        buttonGroup4 = new javax.swing.ButtonGroup();
         labelCantidad = new javax.swing.JLabel();
         cantidad = new javax.swing.JTextField();
-        convertirAPesos = new javax.swing.JButton();
-        convertirADolares = new javax.swing.JButton();
+        botonConvertir = new javax.swing.JButton();
         resultado = new javax.swing.JTextField();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
+        pesosADolares = new javax.swing.JRadioButton();
+        dolaresAPesos = new javax.swing.JRadioButton();
+        pesosAEuros = new javax.swing.JRadioButton();
+        eurosAPesos = new javax.swing.JRadioButton();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        precioEuro = new javax.swing.JLabel();
+        precioDolar = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         labelCantidad.setText("Cantidad a convertir:");
 
-        convertirAPesos.setText("A Pesos ($)");
-
-        convertirADolares.setText("A Dólares (US$)");
+        botonConvertir.setText("Convertir");
 
         resultado.setToolTipText("");
 
-        jRadioButton1.setText("($) Pesos a (US$) Dólares");
-        jRadioButton1.setEnabled(false);
+        buttonGroup1.add(pesosADolares);
+        pesosADolares.setText("($) Pesos a (US$) Dólares");
+        pesosADolares.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pesosADolaresActionPerformed(evt);
+            }
+        });
 
-        jRadioButton2.setText("(US$) Dólares a ($) Pesos");
-        jRadioButton2.setEnabled(false);
+        buttonGroup1.add(dolaresAPesos);
+        dolaresAPesos.setText("(US$) Dólares a ($) Pesos");
+        dolaresAPesos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dolaresAPesosActionPerformed(evt);
+            }
+        });
 
-        jRadioButton3.setText("($) Pesos a (€) Euros");
-        jRadioButton3.setEnabled(false);
+        buttonGroup1.add(pesosAEuros);
+        pesosAEuros.setText("($) Pesos a (€) Euros");
+        pesosAEuros.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pesosAEurosActionPerformed(evt);
+            }
+        });
 
-        jRadioButton4.setText("(€) Euros a ($) Pesos");
-        jRadioButton4.setEnabled(false);
+        buttonGroup1.add(eurosAPesos);
+        eurosAPesos.setText("(€) Euros a ($) Pesos");
+        eurosAPesos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eurosAPesosActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Resultado:");
+
+        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        precioEuro.setForeground(new java.awt.Color(0, 153, 0));
+
+        precioDolar.setForeground(new java.awt.Color(0, 102, 255));
+
+        jLabel2.setText("(US$)");
+
+        jLabel3.setText("(€)");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(precioDolar, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(precioEuro, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(precioDolar, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
+                    .addComponent(precioEuro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(69, 69, 69)
-                        .addComponent(convertirAPesos, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(convertirADolares, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(resultado, javax.swing.GroupLayout.PREFERRED_SIZE, 359, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(labelCantidad)
-                                .addGap(18, 18, 18)
-                                .addComponent(cantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jRadioButton1)
-                                    .addComponent(jRadioButton3))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jRadioButton4)
-                                    .addComponent(jRadioButton2))))))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jLabel1)
+                            .addGap(61, 61, 61)
+                            .addComponent(botonConvertir, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(pesosADolares)
+                                .addComponent(pesosAEuros))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(eurosAPesos)
+                                .addComponent(dolaresAPesos)))
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(labelCantidad)
+                            .addGap(18, 18, 18)
+                            .addComponent(cantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(resultado, javax.swing.GroupLayout.Alignment.LEADING))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jRadioButton1, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jRadioButton2, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(pesosADolares, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(dolaresAPesos, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton3)
-                    .addComponent(jRadioButton4))
+                    .addComponent(pesosAEuros)
+                    .addComponent(eurosAPesos))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelCantidad)
                     .addComponent(cantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(convertirAPesos)
-                    .addComponent(convertirADolares))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(botonConvertir))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(resultado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(10, 10, 10))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void pesosADolaresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesosADolaresActionPerformed
+        botonConvertir.setActionCommand(PESOSADOLARES);
+    }//GEN-LAST:event_pesosADolaresActionPerformed
+
+    private void dolaresAPesosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dolaresAPesosActionPerformed
+        botonConvertir.setActionCommand(DOLARESAPESOS);
+    }//GEN-LAST:event_dolaresAPesosActionPerformed
+
+    private void pesosAEurosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesosAEurosActionPerformed
+        botonConvertir.setActionCommand(PESOSAEUROS);
+    }//GEN-LAST:event_pesosAEurosActionPerformed
+
+    private void eurosAPesosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eurosAPesosActionPerformed
+        botonConvertir.setActionCommand(EUROSAPESOS);
+    }//GEN-LAST:event_eurosAPesosActionPerformed
 
 //    /**
 //     * @param args the command line arguments
@@ -157,23 +240,29 @@ public class VentanaConversor extends javax.swing.JFrame implements InterfazVist
 //    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botonConvertir;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.ButtonGroup buttonGroup3;
+    private javax.swing.ButtonGroup buttonGroup4;
     private javax.swing.JTextField cantidad;
-    private javax.swing.JButton convertirADolares;
-    private javax.swing.JButton convertirAPesos;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
+    private javax.swing.JRadioButton dolaresAPesos;
+    private javax.swing.JRadioButton eurosAPesos;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel labelCantidad;
+    private javax.swing.JRadioButton pesosADolares;
+    private javax.swing.JRadioButton pesosAEuros;
+    private javax.swing.JLabel precioDolar;
+    private javax.swing.JLabel precioEuro;
     private javax.swing.JTextField resultado;
     // End of variables declaration//GEN-END:variables
 
     @Override
     public void setControl(ControlConversor c) {
-        convertirAPesos.addActionListener(c);
-        convertirADolares.addActionListener(c);
+        botonConvertir.addActionListener(c);
     }
 
     @Override
@@ -194,5 +283,15 @@ public class VentanaConversor extends javax.swing.JFrame implements InterfazVist
     @Override
     public void escribeCambio(String s) {
         resultado.setText(s);
+    }
+    
+    @Override
+    public void escribirValorDolar (double valor){
+        precioDolar.setText(""+valor);
+    }
+    
+    @Override
+    public void escribirValorEuro (double valor){
+        precioEuro.setText(""+valor);
     }
 }
