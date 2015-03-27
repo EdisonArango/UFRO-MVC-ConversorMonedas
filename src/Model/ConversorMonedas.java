@@ -16,6 +16,8 @@ public class ConversorMonedas {
     public ConversorMonedas(double cambio) {
         this.cambio = cambio;
     }
+    public ConversorMonedas() {
+    }
     
     public double monedaAPesos(double cantidad){ 
         return cantidad*cambio;
@@ -24,4 +26,13 @@ public class ConversorMonedas {
     public double pesosAMoneda(double cantidad){
         return cantidad/cambio;
     }
+
+    public double getCambio() {
+        return cambio;
+    }
+
+    public void setCambio(double cambio) {
+        this.cambio = cambio;
+    }
+    
 }

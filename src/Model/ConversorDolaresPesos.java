@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package Model;
+import net.webservicex.*;
 
 /**
  *
@@ -12,7 +13,6 @@ package Model;
 public class ConversorDolaresPesos extends ConversorMonedas{
 
     public ConversorDolaresPesos() {
-        super(651.45D);
     }
     
     public double dolaresAPesos(double cantidad){
@@ -21,6 +21,11 @@ public class ConversorDolaresPesos extends ConversorMonedas{
     
     public double pesosADolares (double cantidad){
         return pesosAMoneda(cantidad);
+    }
+    
+    public void actualizarValorCambio (){
+        double valorCambio = new CurrencyConvertor().getCurrencyConvertorSoap().conversionRate(Currency.USD, Currency.CLP);
+        super.setCambio(valorCambio);
     }
     
 }

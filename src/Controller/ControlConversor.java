@@ -28,6 +28,7 @@ public class ControlConversor implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         double cantidad = vista.getCantidad();
+        conversorDolaresPesos.actualizarValorCambio();
         
         switch (e.getActionCommand()) {
             case InterfazVista.PESOSADOLARES:
@@ -36,12 +37,12 @@ public class ControlConversor implements ActionListener{
             case InterfazVista.DOLARESAPESOS:
                 vista.escribeCambio(cantidad + " dólares son: "+conversorDolaresPesos.dolaresAPesos(cantidad)+" pesos");
                 break;
-            case InterfazVista.PESOSAEUROS:
-                vista.escribeCambio(cantidad + " pesos son: "+conversorEurosPesos.pesosAEuros(cantidad)+" euros");
-                break;
-            case InterfazVista.EUROSAPESOS:
-                vista.escribeCambio(cantidad + " euros son: "+conversorEurosPesos.eurosAPesos(cantidad)+" pesos");
-                break;
+//            case InterfazVista.PESOSAEUROS:
+//                vista.escribeCambio(cantidad + " pesos son: "+conversorEurosPesos.pesosAEuros(cantidad)+" euros");
+//                break;
+//            case InterfazVista.EUROSAPESOS:
+//                vista.escribeCambio(cantidad + " euros son: "+conversorEurosPesos.eurosAPesos(cantidad)+" pesos");
+//                break;
             default:
                 vista.escribeCambio("ERROR!");
                 break;

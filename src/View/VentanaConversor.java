@@ -54,12 +54,16 @@ public class VentanaConversor extends javax.swing.JFrame implements InterfazVist
         resultado.setToolTipText("");
 
         jRadioButton1.setText("($) Pesos a (US$) Dólares");
+        jRadioButton1.setEnabled(false);
 
         jRadioButton2.setText("(US$) Dólares a ($) Pesos");
+        jRadioButton2.setEnabled(false);
 
         jRadioButton3.setText("($) Pesos a (€) Euros");
+        jRadioButton3.setEnabled(false);
 
         jRadioButton4.setText("(€) Euros a ($) Pesos");
+        jRadioButton4.setEnabled(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
